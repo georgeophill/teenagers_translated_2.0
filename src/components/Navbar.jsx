@@ -8,7 +8,8 @@ import { links } from "../data";
 import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
-  const [isResponsive, setIsResponsive] = useState(window.innerWidth <= 1231);
+  const MOBILE_BREAKPOINT = 1230;
+  const [isResponsive, setIsResponsive] = useState(window.innerWidth <= MOBILE_BREAKPOINT);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsResponsive(window.innerWidth <= 1231);
+      setIsResponsive(window.innerWidth <= MOBILE_BREAKPOINT);
     };
 
     window.addEventListener("resize", handleResize);
